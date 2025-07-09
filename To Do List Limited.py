@@ -1,5 +1,5 @@
 filename="file.tri"
-chktst="0"*64
+chktst="0"
 
 def reset():
     with open(filename,"w") as file:
