@@ -1,4 +1,5 @@
 filename="file.tri"
+chktst="0"*64
 
 def reset():
     with open(filename,"w") as file:
@@ -84,10 +85,14 @@ def delete2():
         file.seek(del_entry-1)
         file.write("0")
 
-
-with open(filename,"r") as file:    #Make checksum
-    chktst=file.read(64)
-    #print(chktst)
+try:
+    with open(filename,"r") as file:    #Make checksum
+        
+        chktst=file.read(64)
+        #print(chktst)
+except FileNotFoundError:
+    reset()
+    
 if not chktst.isdigit():
     reset()
 
