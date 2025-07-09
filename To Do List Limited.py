@@ -20,7 +20,7 @@ def read2(chktst):
             file.seek(0)
             if chktst[x] == "1":
                 file.seek(64+3*x)
-                print(f"{x+1:2}: {file.read(3)}", end=" ")
+                print(f"{x+1:2}: {file.read(3)}", end=" - ")
                 file.seek(0)
                 file.seek(256+20*x)
                 print(f"{file.read(20)}")
