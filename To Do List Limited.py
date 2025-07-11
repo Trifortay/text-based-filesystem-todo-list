@@ -1,3 +1,7 @@
+import os
+
+#filepath=os.path.join(os.path.expanduser("~"),"AppData","Roaming","TriStuff","FileSystemToDoList")
+#os.makedirs(filepath,exist_ok=True)
 filename="file.tri"
 chktst="0"
 
@@ -104,20 +108,20 @@ for x in range(64):                    #check checksum
 while True:
     i_o=input("Read or Write or Delete or Delete All [r/w/d/x]: ").lower()
     if i_o == "r":
-        read2(chktst)
-        break
+        read2(chktst)        
     elif i_o == "w":
-        write2()
-        break
+        write2()        
     elif i_o == "d":
-        delete2()
-        break
+        delete2()        
     elif i_o == "x":
         deleteall=input("Are you sure (Enter \"YES\" in all caps)")
         if deleteall == "YES":
             resetsoft()
-            break
-
     else:
         print("Please enter \"r\" or \"w\" or \"d\" or \"x\".")
         continue
+    again=input("Again? [y/n]: ").lower()
+    if again == "y":
+        continue
+    else:
+        break
